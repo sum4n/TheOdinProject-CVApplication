@@ -1,12 +1,21 @@
-.info-box {
+.info-box,
+.info-content {
   border: 1px solid black;
   display: flex;
   flex-direction: column;
 }
 
+.info-content {
+  border: none;
+}
+
 h2 {
   margin-left: 10px;
   text-decoration: underline;
+}
+
+label {
+  margin-left: 10px;
 }
 
 input {
@@ -20,4 +29,8 @@ button {
   height: 30px;
   margin: 10px 0px 10px 10px;
   border-radius: 4px;
+}
+
+.info-box p {
+  margin-left: 10px;
 }
