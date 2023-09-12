@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/style.css";
+import Input from "./Input";
 
 function PracticalExp() {
   const [workInfo, setWorkInfo] = useState({
@@ -28,42 +29,27 @@ function PracticalExp() {
 
       {showForm ? (
         <div className="info-content">
-          <label>
-            Company:
-            <input
-              type="text"
-              name="company"
-              value={workInfo.company}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Position:
-            <input
-              type="text"
-              name="position"
-              value={workInfo.position}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Responsibility:
-            <input
-              type="text"
-              name="responsibility"
-              value={workInfo.responsibility}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Work Duration:
-            <input
-              type="text"
-              name="workDuration"
-              value={workInfo.workDuration}
-              onChange={handleChange}
-            />
-          </label>
+          <Input
+            name="company"
+            value={workInfo.company}
+            onChange={handleChange}
+          />
+          <Input
+            name="position"
+            value={workInfo.position}
+            onChange={handleChange}
+          />
+          <Input
+            name="responsibility"
+            value={workInfo.responsibility}
+            onChange={handleChange}
+          />
+          <Input
+            name="workDuration"
+            value={workInfo.workDuration}
+            onChange={handleChange}
+          />
+
           <button onClick={handleSubmit}>Submit</button>
         </div>
       ) : (

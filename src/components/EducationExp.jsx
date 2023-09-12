@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/style.css";
+import Input from "./Input";
 
 function EducationExp() {
   const [experience, setExperience] = useState({
@@ -26,36 +27,21 @@ function EducationExp() {
       <h2>Educational Experience</h2>
       {showForm ? (
         <div className="info-content">
-          <label>
-            School
-            <input
-              type="text"
-              name="school"
-              value={experience.school}
-              onChange={handleChange}
-            />
-          </label>
-
-          <label>
-            Course
-            <input
-              type="text"
-              name="course"
-              value={experience.course}
-              onChange={handleChange}
-            />
-          </label>
-
-          <label>
-            Session
-            <input
-              type="text"
-              name="session"
-              value={experience.session}
-              onChange={handleChange}
-            />
-          </label>
-
+          <Input
+            name="school"
+            value={experience.school}
+            onChange={handleChange}
+          />
+          <Input
+            name="course"
+            value={experience.course}
+            onChange={handleChange}
+          />
+          <Input
+            name="session"
+            value={experience.session}
+            onChange={handleChange}
+          />
           <button onClick={handleClick}>Submit</button>
         </div>
       ) : (
