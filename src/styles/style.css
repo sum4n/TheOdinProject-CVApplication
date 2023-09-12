@@ -16,6 +16,10 @@ h2 {
   text-decoration: underline;
 }
 
+label::first-letter {
+  text-transform: capitalize;
+}
+
 label {
   margin-left: 10px;
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/style.css";
+import Input from "./Input";
 
 function GeneralInfo() {
   const [inititalInfo, setInfo] = useState({ name: "", email: "", phone: "" });
@@ -23,36 +24,22 @@ function GeneralInfo() {
 
       {showForm ? (
         <div className="info-content">
-          <label>
-            Name:
-            <input
-              type="text"
-              name="name"
-              value={inititalInfo.name}
-              onChange={handleChange}
-            />
-          </label>
+          <Input
+            name="name"
+            value={inititalInfo.name}
+            onChange={handleChange}
+          />
+          <Input
+            name="email"
+            value={inititalInfo.email}
+            onChange={handleChange}
+          />
 
-          <label>
-            Email:
-            <input
-              type="email"
-              name="email"
-              value={inititalInfo.email}
-              onChange={handleChange}
-            />
-          </label>
-
-          <label>
-            Phone:
-            <input
-              type="text"
-              name="phone"
-              value={inititalInfo.phone}
-              onChange={handleChange}
-            />
-          </label>
-
+          <Input
+            name="phone"
+            value={inititalInfo.phone}
+            onChange={handleChange}
+          />
           <button type="submit" onClick={handleSubmit}>
             Submit
           </button>
