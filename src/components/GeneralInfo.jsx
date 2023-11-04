@@ -4,7 +4,6 @@ import Input from "./Input";
 
 function GeneralInfo() {
   const [inititalInfo, setInfo] = useState({ name: "", email: "", phone: "" });
-
   const [showForm, setShowForm] = useState(true);
 
   function handleChange(e) {
@@ -40,7 +39,15 @@ function GeneralInfo() {
             value={inititalInfo.phone}
             onChange={handleChange}
           />
-          <button type="submit" onClick={handleSubmit}>
+          <button
+            type="submit"
+            onClick={handleSubmit}
+            disabled={
+              inititalInfo.name.length === 0 ||
+              inititalInfo.email.length === 0 ||
+              inititalInfo.phone.length === 0
+            }
+          >
             Submit
           </button>
         </div>
